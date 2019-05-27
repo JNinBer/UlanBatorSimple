@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--选中-->
+    <item android:drawable="@color/colorAccent" android:state_selected="true"/>
+    <!--焦点-->
+    <item android:drawable="@color/dialog_bg" android:state_focused="true"/>
+    <!--触摸-->
+    <item android:drawable="@color/btn_press_color" android:state_pressed="true"/>
+
+
+    <!--选中-->
+    <item android:drawable="@color/btn_unpress_color" android:state_selected="false"/>
+    <!--焦点-->
+    <item android:drawable="@color/btn_unpress_color" android:state_focused="false"/>
+    <!--触摸-->
+    <item android:drawable="@color/btn_unpress_color" android:state_pressed="false"/>
+
+
+</selector>
