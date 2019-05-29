@@ -1,5 +1,6 @@
 package com.xiamuyao.sample.network
 
+import com.xiamuyao.sample.constant.ProjectConstant
 import com.xiamuyao.ulanbator.LibApp
 import com.xiamuyao.ulanbator.net.CacheInterceptor
 import okhttp3.OkHttpClient
@@ -11,7 +12,6 @@ import java.io.File
 
 object ServiceCreator {
 
-    private const val BASE_URL = "https://wanandroid.com/wxarticle/"
 
     private val httpClient by lazy {
 
@@ -29,7 +29,7 @@ object ServiceCreator {
 
 
     private val builder = Retrofit.Builder()
-        .baseUrl(BASE_URL)
+        .baseUrl(ProjectConstant.BASE_URL)
         .client(httpClient.build())
         .addConverterFactory(GsonConverterFactory.create())
 

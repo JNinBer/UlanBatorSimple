@@ -6,14 +6,22 @@ import android.view.ViewGroup
 import com.xiamuyao.sample.BR
 import com.xiamuyao.sample.R
 import com.xiamuyao.sample.databinding.FragmentHomeBinding
+import com.xiamuyao.sample.model.bean.Dataa
 import com.xiamuyao.sample.viewmodel.HomeViewModel
 import com.xiamuyao.ulanbator.base.BaseFragment
+import com.xiamuyao.ulanbator.base.adapter.BaseNoChildClickAdapter
+import com.xiamuyao.ulanbator.extension.defaultStyle
 import com.xiamuyao.ulanbator.utlis.LibConstant
 
 
 class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>() {
-    override fun initView() {
 
+    val homeListAdapter by lazy {
+        BaseNoChildClickAdapter(R.layout.item_home, viewModel.itemList, BR.itemHome)
+    }
+
+    override fun initView() {
+        binding.homeRecyclerView.defaultStyle(homeListAdapter)
     }
 
     override fun initVVMObserver() {

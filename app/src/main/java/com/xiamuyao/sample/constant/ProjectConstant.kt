@@ -5,5 +5,5 @@ package com.xiamuyao.sample.constant
  */
 object ProjectConstant {
 
-    const val BASE_URL = "https://www.baidu.com/"
+    const val BASE_URL = "https://wanandroid.com/wxarticle/"
 }

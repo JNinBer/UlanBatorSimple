@@ -9,7 +9,6 @@ import com.xiamuyao.ulanbator.LibApp
 import org.kodein.di.Kodein
 import org.kodein.di.KodeinAware
 import org.kodein.di.generic.*
-import android.hardware.Camera.ErrorCallback
 import com.kingja.loadsir.core.LoadSir
 import com.xiamuyao.ulanbator.base.callback.LoadErrorCallback
 import com.xiamuyao.ulanbator.base.callback.LoadIngCallback
