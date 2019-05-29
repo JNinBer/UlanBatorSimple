@@ -19,8 +19,7 @@ class BusinessNetwork {
             if (business == null) {
                 synchronized(BusinessNetwork::class.java) {
                     if (business == null) {
-                        business =
-                            BusinessNetwork()
+                        business = BusinessNetwork()
                     }
                 }
             }

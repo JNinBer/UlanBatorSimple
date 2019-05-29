@@ -17,9 +17,13 @@ abstract class BaseActivity<V : ViewDataBinding, VM : BaseViewModel> : AppCompat
     lateinit var viewModel: VM
     lateinit var mContext: Context
 
-    open val loadPage: Boolean = false
+    open val loadPage: Boolean = true
 
-    var mLoadService: LoadService<*>? = null
+    val mLoadService by lazy {
+        LoadSir.getDefault().register(this) {
+            initData()
+        }
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -55,23 +59,10 @@ abstract class BaseActivity<V : ViewDataBinding, VM : BaseViewModel> : AppCompat
 
         viewModel.finishStatus.observe(this, Observer { finish() })
 
-        DataBus.observeData(this, LibConstant.EVENT_BUS_LOAD, object : DataBusObservable<Int> {
-            override fun DataBusDataCallBack(it: Int) {
-                LibBusinessUtli.switchPageState(it, mLoadService)
-            }
-        })
-
     }
 
     private fun initViewDataBinding(savedInstanceState: Bundle?) {
         binding = DataBindingUtil.setContentView(this, initContentView(savedInstanceState))
-
-
-        if (loadPage) {
-            mLoadService = LoadSir.getDefault().register(this) {
-                initData()
-            }
-        }
 
         viewModel = ViewModelProviders.of(this).get(initViewModel())
         //让 ViewModel 拥有View的生命周期感应
@@ -104,7 +95,7 @@ abstract class BaseActivity<V : ViewDataBinding, VM : BaseViewModel> : AppCompat
      * 初始化页面数据
      */
     open fun initData() {
-            viewModel.initData()
+        viewModel.initData()
     }
 
     /**

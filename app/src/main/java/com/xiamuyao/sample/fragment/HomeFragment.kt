@@ -4,9 +4,11 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import com.xiamuyao.sample.BR
+import com.xiamuyao.sample.R
 import com.xiamuyao.sample.databinding.FragmentHomeBinding
 import com.xiamuyao.sample.viewmodel.HomeViewModel
 import com.xiamuyao.ulanbator.base.BaseFragment
+import com.xiamuyao.ulanbator.utlis.LibConstant
 
 
 class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>() {
@@ -16,22 +18,10 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>() {
 
     override fun initVVMObserver() {
 
-
-
-//        LL.d(viewModel.user.value.toString())
-//        // 页面view生成之后调用数据
-//        //
-//        //
-//        //
-//        lifecycleScope.launch {
-//            whenResumed { }
-//        }
-
-
     }
 
     override fun initContentView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): Int {
-        return com.xiamuyao.sample.R.layout.fragment_home
+        return R.layout.fragment_home
     }
 
     override fun initVariableId(): Int {

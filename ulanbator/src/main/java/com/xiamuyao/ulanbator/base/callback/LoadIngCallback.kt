@@ -14,11 +14,15 @@ class LoadIngCallback : Callback() {
         return R.layout.layout_load_ing
     }
 
+    //是否在显示Callback视图的时候显示原始图(SuccessView)，返回true显示，false隐藏
     override fun getSuccessVisible(): Boolean {
         return super.getSuccessVisible()
     }
 
-    override fun onReloadEvent(context: Context?, view: View?): Boolean {
-        return true
+    //将Callback添加到当前视图时的回调，View为当前Callback的布局View
+    override fun onAttach(context: Context?, view: View?) {
+        super.onAttach(context, view)
     }
+
+
 }

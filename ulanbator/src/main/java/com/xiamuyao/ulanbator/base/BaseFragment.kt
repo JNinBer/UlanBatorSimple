@@ -55,7 +55,7 @@ abstract class BaseFragment<V : ViewDataBinding, VM : BaseViewModel> : Fragment(
         initView()
 
         lifecycleScope.launchWhenResumed {
-LL.d("加载了数据")
+            LL.d("加载了数据")
             //注册基本的事件回调
             initBaseLiveDataCallBack()
             initVVMObserver()
@@ -67,14 +67,6 @@ LL.d("加载了数据")
     }
 
     private fun initBaseLiveDataCallBack() {
-
-
-        DataBus.observeData(this, LibConstant.EVENT_BUS_LOAD, object : DataBusObservable<Int> {
-            override fun DataBusDataCallBack(it: Int) {
-                LibBusinessUtli.switchPageState(it, mLoadService)
-            }
-        })
-
         //页面状态修改
         viewModel.loadStatus.observe(this, Observer {
             LibBusinessUtli.switchPageState(it, mLoadService)

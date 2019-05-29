@@ -22,6 +22,4 @@ object LibConstant {
     //没有网络
     const val LOAD_NONET = 105
 
-    const val EVENT_BUS_LOAD = "EVENT_BUS_LOAD"
-
 }
