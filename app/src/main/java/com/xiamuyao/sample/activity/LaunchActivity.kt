@@ -24,26 +24,6 @@ class LaunchActivity : BaseActivity<ActivityLaunchBinding, LaunchViewModel>() {
             MainActivity.start(this@LaunchActivity)
         }
 
-//        animation_view.addAnimatorListener(object : Animator.AnimatorListener {
-//            override fun onAnimationRepeat(animation: Animator?) {
-//                LL.d("onAnimationRepeat")
-//            }
-//
-//            override fun onAnimationEnd(animation: Animator?) {
-//                LL.d("onAnimationEnd")
-//            }
-//
-//            override fun onAnimationCancel(animation: Animator?) {
-//                LL.d("onAnimationCancel")
-//
-//            }
-//
-//            override fun onAnimationStart(animation: Animator?) {
-//                LL.d("onAnimationStart")
-//            }
-//
-//        })
-
     }
 
     override fun initVVMObserver() {

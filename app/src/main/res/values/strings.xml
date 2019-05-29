@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">ulanbatorSimple</string>
+    <string name="titleBarLeftText">返回</string>
 </resources>
